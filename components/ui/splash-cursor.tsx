@@ -137,7 +137,7 @@ function SplashCursor({
 
       let halfFloat: any;
       let supportLinearFiltering: boolean;
-      
+
       if (isWebGL2) {
         const webgl2 = gl as WebGL2RenderingContext;
         webgl2.getExtension("EXT_color_buffer_float");
@@ -192,9 +192,9 @@ function SplashCursor({
     }
 
     function getSupportedFormat(
-      gl: WebGL2RenderingContext | WebGLRenderingContext, 
-      internalFormat: number, 
-      format: number, 
+      gl: WebGL2RenderingContext | WebGLRenderingContext,
+      internalFormat: number,
+      format: number,
       type: number
     ): { internalFormat: number; format: number } {
       if (!supportRenderTextureFormat(gl, internalFormat, format, type)) {
@@ -215,9 +215,9 @@ function SplashCursor({
     }
 
     function supportRenderTextureFormat(
-      gl: WebGL2RenderingContext | WebGLRenderingContext, 
-      internalFormat: number, 
-      format: number, 
+      gl: WebGL2RenderingContext | WebGLRenderingContext,
+      internalFormat: number,
+      format: number,
       type: number
     ): boolean {
       const texture = gl.createTexture();
@@ -323,7 +323,7 @@ function SplashCursor({
     function createProgram(vertexShader: WebGLShader, fragmentShader: WebGLShader): WebGLProgram {
       const program = gl.createProgram();
       if (!program) throw new Error("Failed to create WebGL program");
-      
+
       gl.attachShader(program, vertexShader);
       gl.attachShader(program, fragmentShader);
       gl.linkProgram(program);
@@ -352,7 +352,7 @@ function SplashCursor({
       source = addKeywords(source, keywords);
       const shader = gl.createShader(type);
       if (!shader) throw new Error("Failed to create WebGL shader");
-      
+
       gl.shaderSource(shader, source);
       gl.compileShader(shader);
 
@@ -1235,7 +1235,7 @@ function SplashCursor({
       p = v * (1 - s);
       q = v * (1 - f * s);
       t = v * (1 - (1 - f) * s);
-      
+
       switch (i % 6) {
         case 0:
           r = v;

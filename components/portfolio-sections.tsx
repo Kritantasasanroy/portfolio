@@ -1,10 +1,19 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { SplineScene } from "@/components/ui/spline"
 import { Spotlight } from "@/components/ui/spotlight"
 import { motion } from "framer-motion"
+import dynamic from "next/dynamic"
 import { useState } from "react"
+
+const SplineScene = dynamic(() => import("@/components/ui/spline").then(mod => ({ default: mod.SplineScene })), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <span className="loader"></span>
+    </div>
+  ),
+})
 
 export function HeroSection() {
   return (

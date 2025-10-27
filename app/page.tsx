@@ -1,14 +1,18 @@
 import {
-    AboutSection,
-    AchievementsSection,
-    ContactSection,
-    EducationSection,
-    ExperienceSection,
-    HeroSection,
-    ProjectsSection,
-    SkillsSection
+  AboutSection,
+  AchievementsSection,
+  ContactSection,
+  EducationSection,
+  ExperienceSection,
+  HeroSection,
+  ProjectsSection,
+  SkillsSection
 } from '@/components/portfolio-sections'
-import { SplashCursor } from '@/components/ui/splash-cursor'
+import dynamic from 'next/dynamic'
+
+const SplashCursor = dynamic(() => import('@/components/ui/splash-cursor').then(mod => ({ default: mod.SplashCursor })), {
+  ssr: false,
+})
 
 export default function Home() {
   return (
