@@ -94,7 +94,7 @@ export function HeroSection() {
 
           {/* Right content */}
           <motion.div
-            className="flex-1 relative"
+            className="flex-1 relative hidden md:block"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
